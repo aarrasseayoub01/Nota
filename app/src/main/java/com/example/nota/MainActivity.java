@@ -29,7 +29,6 @@ public class MainActivity extends AppCompatActivity {
         if (c.moveToFirst()) {
             do data.add(c.getString(c.getColumnIndex(Notes.TITLE))); while (c.moveToNext());
         }
-        Toast.makeText(getBaseContext(), data.toString(), Toast.LENGTH_SHORT).show();
         Bundle args = new Bundle();
         args.putStringArrayList("list",data);
 
@@ -39,6 +38,28 @@ public class MainActivity extends AppCompatActivity {
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
         ft.add(R.id.fragment_container, fragment);
         ft.commit();
+    }
+    @Override
+    protected void onResume() {
+        super.onResume();
+        String URL = "content://com.example.nota.Notes";
+        Uri Notes1 = Uri.parse(URL);
+        Cursor c;
+        c = getContentResolver().query(Notes1, null, null, null, "note");
+        ArrayList<String> data = new ArrayList<>();;
+        if (c.moveToFirst()) {
+            do data.add(c.getString(c.getColumnIndex(Notes.TITLE))); while (c.moveToNext());
+        }
+        Bundle args = new Bundle();
+        args.putStringArrayList("list",data);
+
+// set the arguments on the fragment
+        NoteList fragment = new NoteList();
+        fragment.setArguments(args);
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+
+        transaction.replace(R.id.fragment_container, fragment);
+        transaction.commit();
     }
     public void Writing(View view){
         Intent intent = new Intent();
