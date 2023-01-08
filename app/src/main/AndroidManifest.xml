@@ -13,13 +13,27 @@
         android:theme="@style/Theme.Nota"
         tools:targetApi="31">
         <activity
+            android:name=".Note"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.NOTE" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".writing"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
+
             <intent-filter>
                 <action android:name="android.intent.action.WRITING" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
@@ -37,12 +51,12 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+
         <provider
+            android:name=".Notes"
             android:authorities="com.example.nota.Notes"
-            android:name="com.example.nota.Notes"
             android:enabled="true"
-            android:exported="true"
-            />
+            android:exported="true" />
     </application>
 
 </manifest>

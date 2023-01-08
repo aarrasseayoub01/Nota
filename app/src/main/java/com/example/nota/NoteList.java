@@ -87,7 +87,7 @@ public class NoteList extends Fragment {
 
                 // Create an Intent to start the new activity
                 Intent intent = new Intent();
-                intent.setAction("android.intent.action.WRITING");
+                intent.setAction("android.intent.action.NOTE");
                 intent.putExtra("item", item);
                 startActivity(intent);
 
