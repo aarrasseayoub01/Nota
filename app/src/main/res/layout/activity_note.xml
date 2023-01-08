@@ -33,6 +33,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="660dp"
         android:text="Edit"
+        android:onClick="Edit"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

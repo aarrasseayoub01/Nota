@@ -38,6 +38,19 @@ public class Note extends AppCompatActivity {
         int count = getContentResolver().delete(Notes.CONTENT_URI, selection, selectionArgs);
         Intent intent = new Intent();
         intent.setAction("android.intent.action.LIST");
+        intent.putExtra("edit", "false");
+        startActivity(intent);
+    }
+
+    public void Edit(View view){
+//        String selection = "title=?";
+//        String[] selectionArgs = { itemTitle };
+//        int count = getContentResolver().delete(Notes.CONTENT_URI, selection, selectionArgs);
+        Intent intent = new Intent();
+        intent.setAction("android.intent.action.WRITING");
+        intent.putExtra("title", itemTitle);
+        intent.putExtra("note", itemNote);
+        intent.putExtra("edit", "true");
         startActivity(intent);
     }
 }
