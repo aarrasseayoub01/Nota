@@ -57,8 +57,7 @@ public class writing extends AppCompatActivity {
             String selection = "title = ?";
             String[] selectionArgs = {inputTitle};
             int count = resolver.update(uri, values, selection, selectionArgs);
-            Intent intent = new Intent();
-            intent.setAction("android.intent.action.LIST");
+            Intent intent = new Intent(getBaseContext(),MainActivity.class);
             startActivity(intent);
         } else {
             ContentValues values = new ContentValues();
@@ -72,8 +71,7 @@ public class writing extends AppCompatActivity {
             assert uri != null;
             Toast.makeText(getBaseContext(),
                     uri.toString(), Toast.LENGTH_LONG).show();
-            Intent intent = new Intent();
-            intent.setAction("android.intent.action.LIST");
+            Intent intent = new Intent(getBaseContext(),MainActivity.class);
             startActivity(intent);
         }
     }

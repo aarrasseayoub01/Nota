@@ -36,8 +36,7 @@ public class Note extends AppCompatActivity {
         String selection = "title=?";
         String[] selectionArgs = { itemTitle };
         int count = getContentResolver().delete(Notes.CONTENT_URI, selection, selectionArgs);
-        Intent intent = new Intent();
-        intent.setAction("android.intent.action.LIST");
+        Intent intent = new Intent(getBaseContext(), MainActivity.class);
         intent.putExtra("edit", "false");
         startActivity(intent);
     }
