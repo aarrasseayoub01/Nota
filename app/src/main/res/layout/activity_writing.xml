@@ -35,12 +35,23 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="371dp"
-        android:layout_height="62dp"
+        android:layout_width="180dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="204dp"
+        android:layout_marginTop="660dp"
+        android:onClick="addNote"
+        android:text="Add Note"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="176dp"
+        android:layout_height="58dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="662dp"
-        android:text="Add Note"
-        android:onClick="addNote"
+        android:onClick="addLink"
+        android:text="Add Link"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

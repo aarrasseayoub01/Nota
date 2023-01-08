@@ -5,6 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.text.Html;
+import android.text.method.LinkMovementMethod;
+import android.text.util.Linkify;
 import android.view.View;
 import android.widget.TextView;
 
@@ -28,9 +31,13 @@ public class Note extends AppCompatActivity {
         while (cursor.moveToNext()) {
             itemNote = cursor.getString(cursor.getColumnIndexOrThrow("note"));
         }
-        title.setText(itemTitle);
-        note.setText(itemNote);
-    }
+        title.setText(Html.fromHtml(itemTitle, Html.FROM_HTML_MODE_LEGACY));
+        title.setClickable(true);
+        title.setMovementMethod(LinkMovementMethod.getInstance());
+        note.setText(Html.fromHtml(itemNote, Html.FROM_HTML_MODE_LEGACY));
+        note.setMovementMethod(LinkMovementMethod.getInstance());
+        note.setLinksClickable(true);
+        }
 
     public void delete(View view){
         String selection = "title=?";
