@@ -1,5 +1,6 @@
 package com.example.nota;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -15,6 +16,7 @@ import android.widget.Toast;
 
 import java.util.Arrays;
 import java.util.List;
+import android.content.Context;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -80,10 +82,10 @@ public class NoteList extends Fragment {
                 String item = (String) parent.getItemAtPosition(position);
 
                 // Create an Intent to start the new activity
-//                Intent intent = new Intent(MyListActivity.this, MyItemActivity.class);
-//                intent.putExtra("item", item);
-//                startActivity(intent);
-                Log.d("TAG", item);
+                Intent intent = new Intent();
+                intent.setAction("android.intent.action.WRITING");
+                intent.putExtra("item", item);
+                startActivity(intent);
 
             }
         });
