@@ -6,4 +6,42 @@
     android:layout_height="match_parent"
     tools:context=".writing">
 
+
+    <EditText
+        android:id="@+id/title"
+        android:layout_width="356dp"
+        android:layout_height="67dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="36dp"
+        android:background="@drawable/edittext_border"
+        android:hint="Add a Title"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textSize="20sp" />
+
+
+    <EditText
+        android:id="@+id/note"
+        android:layout_width="367dp"
+        android:layout_height="523dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="120dp"
+        android:background="@drawable/edittext_border"
+        android:hint="Write what comes to your mind ..."
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="371dp"
+        android:layout_height="62dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="662dp"
+        android:text="Add Note"
+        android:onClick="addNote"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
