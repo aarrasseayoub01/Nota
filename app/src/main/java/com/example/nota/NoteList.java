@@ -1,6 +1,8 @@
 package com.example.nota;
 
 import android.content.Intent;
+import android.database.Cursor;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -14,6 +16,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import android.content.Context;
@@ -71,8 +74,9 @@ public class NoteList extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_note_list, container, false);
         ListView listView = view.findViewById(R.id.listView);
-        List<String> data = Arrays.asList("Item 1", "Item 2", "Item 3");
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1, data);
+        ArrayList<String> list = getArguments().getStringArrayList("list");
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1, list);
         listView.setAdapter(adapter);
 //        ListView listView = getListView();
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
