@@ -32,7 +32,6 @@ public class Note extends AppCompatActivity {
             itemNote = cursor.getString(cursor.getColumnIndexOrThrow("note"));
         }
         title.setText(Html.fromHtml(itemTitle, Html.FROM_HTML_MODE_LEGACY));
-        title.setClickable(true);
         title.setMovementMethod(LinkMovementMethod.getInstance());
         note.setText(Html.fromHtml(itemNote, Html.FROM_HTML_MODE_LEGACY));
         note.setMovementMethod(LinkMovementMethod.getInstance());

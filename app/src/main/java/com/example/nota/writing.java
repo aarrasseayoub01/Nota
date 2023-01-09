@@ -43,6 +43,7 @@ public class writing extends AppCompatActivity {
             String inputNote = getIntent().getStringExtra("note");
             title.setText(inputTitle);
             note.setText((Html.fromHtml(inputNote, Html.FROM_HTML_MODE_LEGACY)));
+
             btn.setText("Update");
         }
 

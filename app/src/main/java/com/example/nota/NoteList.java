@@ -78,10 +78,14 @@ public class NoteList extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_note_list, container, false);
-        ListView listView = view.findViewById(R.id.listView);
         ArrayList<String> list = getArguments().getStringArrayList("list");
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1, list);
+//        ArrayAdapter<String> adapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1, list);
+//        listView.setAdapter(adapter);
+// Create the adapter to convert the array to views
+        userAdapter adapter = new userAdapter(getContext(), list);
+// Attach the adapter to a ListView
+        ListView listView = view.findViewById(R.id.listView);
         listView.setAdapter(adapter);
 //        ListView listView = getListView();
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {

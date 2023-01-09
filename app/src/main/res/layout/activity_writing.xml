@@ -18,7 +18,8 @@
 
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        android:paddingHorizontal="10sp"/>
 
 
     <EditText
@@ -31,7 +32,8 @@
         android:hint="Write what comes to your mind ..."
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:paddingHorizontal="10sp"/>
 
     <Button
         android:id="@+id/button"
