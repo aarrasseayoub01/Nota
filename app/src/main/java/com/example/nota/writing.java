@@ -30,7 +30,7 @@ public class writing extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_writing);
         Button button = findViewById(R.id.button2);
-        button.setBackgroundColor(Color.parseColor("#2ad19f"));
+        button.setBackgroundColor(Color.parseColor("#0AD7C3"));
     }
     String inputTitle;
     public void onStart(){

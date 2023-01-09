@@ -10,7 +10,10 @@
         android:id="@+id/listView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-         />
-
+        android:layout_marginHorizontal="20sp"
+        android:layout_marginTop="20sp"
+        android:background="@drawable/frament_list"
+        android:backgroundTint="#0AD7C3"
+/>
 
 </FrameLayout>
