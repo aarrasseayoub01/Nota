@@ -23,6 +23,7 @@ public class Notes extends ContentProvider {
     static final String _ID = "_id";
     static final String TITLE = "title";
     static final String NOTE = "note";
+    static final String DATE = "date";
     private static HashMap<String, String> NOTES_PROJECTION_MAP;
     static final int NOTES = 1;
     static final int NOTE_ID = 2;
@@ -42,7 +43,7 @@ public class Notes extends ContentProvider {
     static final String CREATE_DB_TABLE =
             " CREATE TABLE " + NOTES_TABLE_NAME +
                     " (_id INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                    " title TEXT NOT NULL, " + " note TEXT NOT NULL);";
+                    " title TEXT NOT NULL, " + " date TEXT NOT NULL," + " note TEXT NOT NULL);";
     /**
      * Helper class qui cree et gere le depot de données lie au provider
      */

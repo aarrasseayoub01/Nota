@@ -35,19 +35,24 @@ public class Note extends AppCompatActivity {
             actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#089c8d")));
 
         }
-        Button button = findViewById(R.id.delete);
-        button.setBackgroundColor(Color.RED);
+        Button buttonDelete = findViewById(R.id.delete);
+        buttonDelete.setBackgroundColor(Color.rgb(191, 36, 57));
+
         TextView title = findViewById(R.id.title);
         TextView note = findViewById(R.id.note);
         Intent intent = getIntent();
         itemTitle = intent.getStringExtra("item");
-        String[] projection = { "note" };
+        String[] projection = { "note, date" };
         String selection = "title = ?";
         String[] selectionArgs = { itemTitle };
         Cursor cursor = getContentResolver().query(Notes.CONTENT_URI,projection,  selection, selectionArgs, null);
+        String date = null;
         while (cursor.moveToNext()) {
             itemNote = cursor.getString(cursor.getColumnIndexOrThrow("note"));
+            date = cursor.getString(cursor.getColumnIndexOrThrow("date"));
         }
+        TextView Modified = findViewById(R.id.Modified);
+        Modified.setText(date);
         title.setText(Html.fromHtml(itemTitle, Html.FROM_HTML_MODE_LEGACY));
         title.setMovementMethod(LinkMovementMethod.getInstance());
         note.setText(Html.fromHtml(itemNote, Html.FROM_HTML_MODE_LEGACY));

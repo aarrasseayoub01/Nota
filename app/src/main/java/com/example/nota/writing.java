@@ -25,6 +25,7 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import java.util.Calendar;
 import java.util.Objects;
 
 public class writing extends AppCompatActivity {
@@ -71,6 +72,15 @@ public class writing extends AppCompatActivity {
 
         if (Objects.equals(inputEdit, "true")) {
             ContentValues values = new ContentValues();
+            Calendar calendar = Calendar.getInstance();
+
+            int year = calendar.get(Calendar.YEAR);
+            int month = calendar.get(Calendar.MONTH); // Jan = 0, dec = 11
+            int day = calendar.get(Calendar.DAY_OF_MONTH);
+            int hour = calendar.get(Calendar.HOUR_OF_DAY);
+            int minute = calendar.get(Calendar.MINUTE);
+            int second = calendar.get(Calendar.SECOND);
+            values.put(Notes.DATE, "Modified at " +String.format("%d-%d-%d %d:%d:%d", year, month+1, day, hour, minute, second));
             values.put(Notes.TITLE,
                     ((EditText) findViewById(R.id.title)).getText().toString());
             values.put(Notes.NOTE,
@@ -84,6 +94,16 @@ public class writing extends AppCompatActivity {
             startActivity(intent);
         } else {
             ContentValues values = new ContentValues();
+            Calendar calendar = Calendar.getInstance();
+
+            int year = calendar.get(Calendar.YEAR);
+            int month = calendar.get(Calendar.MONTH); // Jan = 0, dec = 11
+            int day = calendar.get(Calendar.DAY_OF_MONTH);
+            int hour = calendar.get(Calendar.HOUR_OF_DAY);
+            int minute = calendar.get(Calendar.MINUTE);
+            int second = calendar.get(Calendar.SECOND);
+            values.put(Notes.DATE, "Created at " +String.format("%d-%d-%d %d:%d:%d", year, month+1, day, hour, minute, second));
+
             values.put(Notes.TITLE,
                     ((EditText) findViewById(R.id.title)).getText().toString());
             values.put(Notes.NOTE,
