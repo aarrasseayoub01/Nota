@@ -112,7 +112,7 @@ public void addLink(View view) {
             String url = inputName.getText().toString();
             String expression = inputEmail.getText().toString();
             EditText note = findViewById(R.id.note);
-            String text = note.getText().toString() + " <a href='" + url + "'>" + expression + "</a>";
+            String text = Html.toHtml(((EditText) findViewById(R.id.note)).getText(), Html.FROM_HTML_MODE_LEGACY)+ " <a href='" + url + "'>" + expression + "</a>";
             note.setText(Html.fromHtml(text, Html.FROM_HTML_MODE_LEGACY));
             note.setMovementMethod(LinkMovementMethod.getInstance());
             note.setLinksClickable(true);
