@@ -7,6 +7,7 @@ import android.content.ContentResolver;
 import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.text.Html;
@@ -28,7 +29,8 @@ public class writing extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_writing);
-
+        Button button = findViewById(R.id.button2);
+        button.setBackgroundColor(Color.parseColor("#2ad19f"));
     }
     String inputTitle;
     public void onStart(){
