@@ -24,6 +24,5 @@
         android:onClick="Writing"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@android:drawable/ic_menu_info_details" />
-
+/>
 </androidx.constraintlayout.widget.ConstraintLayout>
